@@ -19,9 +19,7 @@
     "beberlei/assert": "^v2.5",
     "symfony/validator": "^v2.7|v3.0"
   },
-  "bin": {
-    ["bin/generate-constraints.php"]
-  },
+  "bin": ["bin/generate-constraints.php"],
   "autoload": {
     "psr-0": {
       "AssertionConstraint": "src/"
