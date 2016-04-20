@@ -1,6 +1,6 @@
 # [Assert](https://github.com/beberlei/assert) bridge for Symfony
 
-[![Latest Stable Version](https://poser.pugx.org/myschoolmanagement/assert-constraint/v/stable)](https://packagist.org/packages/myschoolmanagement/assert-constraint) [![Total Downloads](https://poser.pugx.org/myschoolmanagement/symfony-rested-bundle/downloads)](https://packagist.org/packages/myschoolmanagement/symfony-rested-bundle) [![Latest Unstable Version](https://poser.pugx.org/myschoolmanagement/assert-constraint/v/unstable)](https://packagist.org/packages/myschoolmanagement/assert-constraint) [![License](https://poser.pugx.org/myschoolmanagement/assert-constraint/license)](https://packagist.org/packages/myschoolmanagement/assert-constraint)
+[![Latest Stable Version](https://poser.pugx.org/myschoolmanagement/assert-constraint/v/stable)](https://packagist.org/packages/myschoolmanagement/assert-constraint) [![Total Downloads](https://poser.pugx.org/myschoolmanagement/assert-constraint/downloads)](https://packagist.org/packages/myschoolmanagement/assert-constraint) [![Latest Unstable Version](https://poser.pugx.org/myschoolmanagement/assert-constraint/v/unstable)](https://packagist.org/packages/myschoolmanagement/assert-constraint) [![License](https://poser.pugx.org/myschoolmanagement/assert-constraint/license)](https://packagist.org/packages/myschoolmanagement/assert-constraint)
 
 This is a simple bridge for using [beberlei/assert](https://github.com/beberlei/assert) assertions as constraints for the [Symfony Validator](https://github.com/symfony/validator) component.
 
