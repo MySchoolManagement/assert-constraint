@@ -1,0 +1,30 @@
+{
+  "name": "myschoolmanagement/assert-constraint",
+  "description": "Symfony validator constraints using beberlei/assert",
+  "authors": [
+    {
+      "name": "Iain Mckay",
+      "email": "iain@msm.io"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "assert",
+    "assertion",
+    "symfony",
+    "validation"
+  ],
+  "require": {
+    "php": ">=5.5",
+    "beberlei/assert": "^v2.5",
+    "symfony/validator": "^v2.7|v3.0"
+  },
+  "bin": {
+    ["bin/generate-constraints.php"]
+  },
+  "autoload": {
+    "psr-0": {
+      "AssertionConstraint": "src/"
+    }
+  }
+}

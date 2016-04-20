@@ -1,0 +1,25 @@
+<?php
+namespace AssertionConstraint\Constraint;
+
+use AssertionConstraint\AbstractAssertionConstraint;
+
+/**
+ * Determines if the value is less or than given limit.
+ *
+ * @Annotation
+ * @Target({"PROPERTY"})
+ */
+class LessOrEqualThan extends AbstractAssertionConstraint
+{
+
+    public $limit;
+    public $message;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionParameterNames()
+    {
+        return array('limit', 'message');
+    }
+}
