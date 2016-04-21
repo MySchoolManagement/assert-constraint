@@ -21,8 +21,8 @@
   },
   "bin": ["bin/generate-constraints.php"],
   "autoload": {
-    "psr-0": {
-      "AssertionConstraint": "src/"
+    "psr-4": {
+      "AssertionConstraint\\": "src/"
     }
   }
 }
