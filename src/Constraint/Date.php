@@ -22,4 +22,12 @@ class Date extends AbstractAssertionConstraint
     {
         return array('format', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'date';
+    }
 }

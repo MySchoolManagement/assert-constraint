@@ -23,4 +23,12 @@ class NullOrRange extends AbstractAssertionConstraint
     {
         return array('minValue', 'maxValue', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'range';
+    }
 }

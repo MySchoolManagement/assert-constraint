@@ -22,4 +22,12 @@ class ChoicesNotEmpty extends AbstractAssertionConstraint
     {
         return array('choices', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'choicesNotEmpty';
+    }
 }

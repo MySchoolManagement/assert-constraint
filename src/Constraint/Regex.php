@@ -22,4 +22,12 @@ class Regex extends AbstractAssertionConstraint
     {
         return array('pattern', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'regex';
+    }
 }

@@ -22,4 +22,12 @@ class GreaterOrEqualThan extends AbstractAssertionConstraint
     {
         return array('limit', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'greaterOrEqualThan';
+    }
 }

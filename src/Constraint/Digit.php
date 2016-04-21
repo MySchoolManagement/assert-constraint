@@ -21,4 +21,12 @@ class Digit extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'digit';
+    }
 }

@@ -22,4 +22,12 @@ class NullOrNotSame extends AbstractAssertionConstraint
     {
         return array('value2', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'notSame';
+    }
 }

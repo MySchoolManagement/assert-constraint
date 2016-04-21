@@ -22,4 +22,12 @@ class NullOrContains extends AbstractAssertionConstraint
     {
         return array('needle', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'contains';
+    }
 }

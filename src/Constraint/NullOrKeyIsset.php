@@ -22,4 +22,12 @@ class NullOrKeyIsset extends AbstractAssertionConstraint
     {
         return array('key', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'keyIsset';
+    }
 }

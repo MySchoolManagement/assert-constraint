@@ -22,4 +22,12 @@ class NullOrImplementsInterface extends AbstractAssertionConstraint
     {
         return array('interfaceName', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'implementsInterface';
+    }
 }

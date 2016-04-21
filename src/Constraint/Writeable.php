@@ -21,4 +21,12 @@ class Writeable extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'writeable';
+    }
 }

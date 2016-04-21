@@ -35,11 +35,11 @@ class AssertionValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__ . '\AbstractAssertionConstraint');
         }
 
-        $assertion = $this->getAssertionName($constraint);
-        $callable = [static::$assertClass, $assertion];
+        $methodName = $constraint->getAssertionMethodName();
+        $callable = [static::$assertClass, $methodName];
         $override = null;
 
-        if (is_callable($override ?: $callable) === false) {
+        if (is_callable($callable) === false) {
             throw new ConstraintDefinitionException('Must be a valid callable on the assertion class');
         }
 

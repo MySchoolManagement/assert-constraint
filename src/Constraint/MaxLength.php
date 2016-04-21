@@ -22,4 +22,12 @@ class MaxLength extends AbstractAssertionConstraint
     {
         return array('maxLength', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'maxLength';
+    }
 }

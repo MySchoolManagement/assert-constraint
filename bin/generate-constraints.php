@@ -32,6 +32,16 @@ class {{ name }} extends AbstractAssertionConstraint
 
 TEMPLATE;
 
+$assertionMethodNameTemplate = <<<TEMPLATE
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return '{{ name }}';
+    }
+TEMPLATE;
+
 $parameterNameMethodTemplate = <<<TEMPLATE
     /**
      * {@inheritdoc}
@@ -45,7 +55,6 @@ TEMPLATE;
 $propertyTemplate = <<<TEMPLATE
     public \${{ name }};
 TEMPLATE;
-
 
 $ignoredMethods = [
     '__callStatic',
@@ -67,7 +76,6 @@ foreach ($reflClass->getMethods() as $method) {
 
     $assertionName = buildAssertionName($method);
     $constraintProperties = buildConstraintPropertyList($method);
-
 
     writeConstraintFile($assertionName, $constraintProperties, $method, $outputDirectory, $assertionTemplate);
     writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, $outputDirectory, $assertionTemplate);
@@ -125,7 +133,7 @@ function buildConstraintPropertyList(ReflectionMethod $method)
 
 function writeConstraintFile($assertionName, array $constraintProperties, ReflectionMethod $method, $outputDirectory, $template)
 {
-    global $propertyTemplate, $parameterNameMethodTemplate, $outputNamespace;
+    global $propertyTemplate, $parameterNameMethodTemplate, $parameterNameMethodTemplate, $assertionMethodNameTemplate, $outputNamespace;
 
     $templateProperties = [];
     $templateMethods = [];
@@ -147,6 +155,8 @@ function writeConstraintFile($assertionName, array $constraintProperties, Reflec
 
         $templateMethods[] = str_replace(array_keys($tokens), array_values($tokens), $parameterNameMethodTemplate);
     }
+
+    $templateMethods[] = str_replace('{{ name }}', $method->getName(), $assertionMethodNameTemplate);
 
     $assertionName = ucwords($assertionName);
     $tokens = [

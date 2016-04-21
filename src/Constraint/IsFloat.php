@@ -21,4 +21,12 @@ class IsFloat extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'float';
+    }
 }

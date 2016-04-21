@@ -21,4 +21,12 @@ class Integerish extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'integerish';
+    }
 }

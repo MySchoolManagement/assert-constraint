@@ -22,4 +22,12 @@ class MethodExists extends AbstractAssertionConstraint
     {
         return array('object', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'methodExists';
+    }
 }

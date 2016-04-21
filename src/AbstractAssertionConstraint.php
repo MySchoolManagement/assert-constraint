@@ -17,6 +17,13 @@ abstract class AbstractAssertionConstraint extends AbstractConstraint
     }
 
     /**
+     * Name of the method to call on the assertion class.
+     *
+     * @return string
+     */
+    public abstract function getAssertionMethodName();
+
+    /**
      * {@inheritdoc}
      */
     public function validatedBy()

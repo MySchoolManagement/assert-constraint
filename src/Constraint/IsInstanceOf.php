@@ -22,4 +22,12 @@ class IsInstanceOf extends AbstractAssertionConstraint
     {
         return array('className', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'isInstanceOf';
+    }
 }

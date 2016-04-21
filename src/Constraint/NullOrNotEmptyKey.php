@@ -22,4 +22,12 @@ class NullOrNotEmptyKey extends AbstractAssertionConstraint
     {
         return array('key', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'notEmptyKey';
+    }
 }

@@ -22,4 +22,12 @@ class NullOrEndsWith extends AbstractAssertionConstraint
     {
         return array('needle', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'endsWith';
+    }
 }

@@ -22,4 +22,12 @@ class NullOrMin extends AbstractAssertionConstraint
     {
         return array('minValue', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'min';
+    }
 }

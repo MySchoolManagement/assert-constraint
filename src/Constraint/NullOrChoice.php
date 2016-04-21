@@ -22,4 +22,12 @@ class NullOrChoice extends AbstractAssertionConstraint
     {
         return array('choices', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'choice';
+    }
 }

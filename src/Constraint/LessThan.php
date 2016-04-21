@@ -22,4 +22,12 @@ class LessThan extends AbstractAssertionConstraint
     {
         return array('limit', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'lessThan';
+    }
 }

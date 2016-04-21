@@ -23,4 +23,12 @@ class BetweenLength extends AbstractAssertionConstraint
     {
         return array('minLength', 'maxLength', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'betweenLength';
+    }
 }

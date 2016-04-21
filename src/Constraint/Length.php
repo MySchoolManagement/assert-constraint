@@ -22,4 +22,12 @@ class Length extends AbstractAssertionConstraint
     {
         return array('length', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'length';
+    }
 }

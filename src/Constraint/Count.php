@@ -22,4 +22,12 @@ class Count extends AbstractAssertionConstraint
     {
         return array('count', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'count';
+    }
 }

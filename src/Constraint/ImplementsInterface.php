@@ -22,4 +22,12 @@ class ImplementsInterface extends AbstractAssertionConstraint
     {
         return array('interfaceName', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'implementsInterface';
+    }
 }

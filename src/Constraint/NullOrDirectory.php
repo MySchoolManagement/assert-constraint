@@ -21,4 +21,12 @@ class NullOrDirectory extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'directory';
+    }
 }

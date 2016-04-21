@@ -22,4 +22,12 @@ class NullOrStartsWith extends AbstractAssertionConstraint
     {
         return array('needle', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'startsWith';
+    }
 }

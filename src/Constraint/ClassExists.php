@@ -21,4 +21,12 @@ class ClassExists extends AbstractAssertionConstraint
     {
         return array('message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'classExists';
+    }
 }

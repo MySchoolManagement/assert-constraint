@@ -22,4 +22,12 @@ class NullOrMax extends AbstractAssertionConstraint
     {
         return array('maxValue', 'message');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssertionMethodName()
+    {
+        return 'max';
+    }
 }
