@@ -56,6 +56,7 @@ class AssertionValidator extends ConstraintValidator
                 $this->context->buildViolation($e->getMessage())
                     ->setParameter('{{ value }}', $this->formatValue($value))
                     ->setCode($e->getCode())
+                    ->setCause($e)
                     ->addViolation();
             } else {
                 throw $e;
