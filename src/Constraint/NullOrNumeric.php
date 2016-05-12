@@ -27,6 +27,6 @@ class NullOrNumeric extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'numeric';
+        return 'nullOrNumeric';
     }
 }

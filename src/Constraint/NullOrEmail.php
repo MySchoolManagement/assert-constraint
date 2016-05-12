@@ -27,6 +27,6 @@ class NullOrEmail extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'email';
+        return 'nullOrEmail';
     }
 }

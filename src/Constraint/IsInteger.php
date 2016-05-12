@@ -27,6 +27,6 @@ class IsInteger extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'integer';
+        return 'IsInteger';
     }
 }

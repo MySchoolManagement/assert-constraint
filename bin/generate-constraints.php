@@ -79,6 +79,7 @@ foreach ($reflClass->getMethods() as $method) {
 
     writeConstraintFile($assertionName, $constraintProperties, $method, $outputDirectory, $assertionTemplate);
     writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, $outputDirectory, $assertionTemplate);
+    writeConstraintFile('all' . ucwords($assertionName), $constraintProperties, $method, $outputDirectory, $assertionTemplate);
 }
 
 function isMethodIgnored(ReflectionMethod $method)

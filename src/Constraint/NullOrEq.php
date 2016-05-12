@@ -28,6 +28,6 @@ class NullOrEq extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'eq';
+        return 'nullOrEq';
     }
 }

@@ -27,6 +27,6 @@ class NullOrFile extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'file';
+        return 'nullOrFile';
     }
 }

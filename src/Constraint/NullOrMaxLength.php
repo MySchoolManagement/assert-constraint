@@ -28,6 +28,6 @@ class NullOrMaxLength extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'maxLength';
+        return 'nullOrMaxLength';
     }
 }

@@ -28,6 +28,6 @@ class NullOrChoicesNotEmpty extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'choicesNotEmpty';
+        return 'nullOrChoicesNotEmpty';
     }
 }

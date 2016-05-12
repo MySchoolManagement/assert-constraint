@@ -28,6 +28,6 @@ class NullOrChoice extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'choice';
+        return 'nullOrChoice';
     }
 }

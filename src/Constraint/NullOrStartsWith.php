@@ -28,6 +28,6 @@ class NullOrStartsWith extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'startsWith';
+        return 'nullOrStartsWith';
     }
 }

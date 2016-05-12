@@ -27,6 +27,6 @@ class IsString extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'string';
+        return 'IsString';
     }
 }

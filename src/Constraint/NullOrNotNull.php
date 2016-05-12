@@ -27,6 +27,6 @@ class NullOrNotNull extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'notNull';
+        return 'nullOrNotNull';
     }
 }

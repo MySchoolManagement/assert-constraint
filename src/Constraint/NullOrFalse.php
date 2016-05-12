@@ -27,6 +27,6 @@ class NullOrFalse extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'false';
+        return 'nullOrFalse';
     }
 }

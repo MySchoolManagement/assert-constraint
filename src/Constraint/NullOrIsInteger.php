@@ -27,6 +27,6 @@ class NullOrIsInteger extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'integer';
+        return 'nullOrIsInteger';
     }
 }

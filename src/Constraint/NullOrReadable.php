@@ -27,6 +27,6 @@ class NullOrReadable extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'readable';
+        return 'nullOrReadable';
     }
 }

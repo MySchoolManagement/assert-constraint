@@ -28,6 +28,6 @@ class NullOrGreaterOrEqualThan extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'greaterOrEqualThan';
+        return 'nullOrGreaterOrEqualThan';
     }
 }

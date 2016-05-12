@@ -28,6 +28,6 @@ class NullOrInArray extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'inArray';
+        return 'nullOrInArray';
     }
 }

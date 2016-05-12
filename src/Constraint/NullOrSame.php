@@ -28,6 +28,6 @@ class NullOrSame extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'same';
+        return 'nullOrSame';
     }
 }

@@ -28,6 +28,6 @@ class NullOrCount extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'count';
+        return 'nullOrCount';
     }
 }

@@ -27,6 +27,6 @@ class NullOrIsArrayAccessible extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isArrayAccessible';
+        return 'nullOrIsArrayAccessible';
     }
 }

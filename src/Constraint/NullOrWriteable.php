@@ -27,6 +27,6 @@ class NullOrWriteable extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'writeable';
+        return 'nullOrWriteable';
     }
 }

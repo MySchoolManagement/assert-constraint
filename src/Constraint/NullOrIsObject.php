@@ -27,6 +27,6 @@ class NullOrIsObject extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isObject';
+        return 'nullOrIsObject';
     }
 }

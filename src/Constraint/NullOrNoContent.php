@@ -27,6 +27,6 @@ class NullOrNoContent extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'noContent';
+        return 'nullOrNoContent';
     }
 }

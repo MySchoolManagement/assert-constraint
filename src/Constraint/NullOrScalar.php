@@ -27,6 +27,6 @@ class NullOrScalar extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'scalar';
+        return 'nullOrScalar';
     }
 }

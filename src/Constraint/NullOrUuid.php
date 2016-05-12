@@ -27,6 +27,6 @@ class NullOrUuid extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'uuid';
+        return 'nullOrUuid';
     }
 }

@@ -27,6 +27,6 @@ class IsBoolean extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'boolean';
+        return 'IsBoolean';
     }
 }

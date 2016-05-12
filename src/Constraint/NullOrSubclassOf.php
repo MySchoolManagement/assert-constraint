@@ -28,6 +28,6 @@ class NullOrSubclassOf extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'subclassOf';
+        return 'nullOrSubclassOf';
     }
 }

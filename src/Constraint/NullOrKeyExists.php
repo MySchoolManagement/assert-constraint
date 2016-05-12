@@ -28,6 +28,6 @@ class NullOrKeyExists extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'keyExists';
+        return 'nullOrKeyExists';
     }
 }

@@ -29,6 +29,6 @@ class NullOrBetweenLength extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'betweenLength';
+        return 'nullOrBetweenLength';
     }
 }

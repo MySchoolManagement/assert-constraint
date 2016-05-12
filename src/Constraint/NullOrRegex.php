@@ -28,6 +28,6 @@ class NullOrRegex extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'regex';
+        return 'nullOrRegex';
     }
 }

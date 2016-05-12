@@ -27,6 +27,6 @@ class NullOrAlnum extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'alnum';
+        return 'nullOrAlnum';
     }
 }

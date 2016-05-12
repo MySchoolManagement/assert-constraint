@@ -29,6 +29,6 @@ class NullOrRange extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'range';
+        return 'nullOrRange';
     }
 }

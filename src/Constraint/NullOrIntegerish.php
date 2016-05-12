@@ -27,6 +27,6 @@ class NullOrIntegerish extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'integerish';
+        return 'nullOrIntegerish';
     }
 }

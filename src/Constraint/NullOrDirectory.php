@@ -27,6 +27,6 @@ class NullOrDirectory extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'directory';
+        return 'nullOrDirectory';
     }
 }

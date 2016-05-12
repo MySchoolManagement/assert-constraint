@@ -28,6 +28,6 @@ class NullOrContains extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'contains';
+        return 'nullOrContains';
     }
 }

@@ -27,6 +27,6 @@ class NullOrIsFloat extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'float';
+        return 'nullOrIsFloat';
     }
 }

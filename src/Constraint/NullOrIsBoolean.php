@@ -27,6 +27,6 @@ class NullOrIsBoolean extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'boolean';
+        return 'nullOrIsBoolean';
     }
 }

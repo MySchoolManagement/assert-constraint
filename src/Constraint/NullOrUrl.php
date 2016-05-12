@@ -27,6 +27,6 @@ class NullOrUrl extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'url';
+        return 'nullOrUrl';
     }
 }

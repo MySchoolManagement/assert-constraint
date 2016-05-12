@@ -28,6 +28,6 @@ class NullOrEndsWith extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'endsWith';
+        return 'nullOrEndsWith';
     }
 }

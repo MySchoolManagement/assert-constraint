@@ -28,6 +28,6 @@ class NullOrKeyIsset extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'keyIsset';
+        return 'nullOrKeyIsset';
     }
 }

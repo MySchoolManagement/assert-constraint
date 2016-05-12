@@ -27,6 +27,6 @@ class NullOrIsString extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'string';
+        return 'nullOrIsString';
     }
 }

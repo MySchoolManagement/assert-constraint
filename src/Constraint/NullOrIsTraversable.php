@@ -27,6 +27,6 @@ class NullOrIsTraversable extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isTraversable';
+        return 'nullOrIsTraversable';
     }
 }

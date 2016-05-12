@@ -28,6 +28,6 @@ class NullOrImplementsInterface extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'implementsInterface';
+        return 'nullOrImplementsInterface';
     }
 }

@@ -27,6 +27,6 @@ class NullOrIsJsonString extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isJsonString';
+        return 'nullOrIsJsonString';
     }
 }

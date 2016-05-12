@@ -28,6 +28,6 @@ class NullOrIsInstanceOf extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isInstanceOf';
+        return 'nullOrIsInstanceOf';
     }
 }

@@ -28,6 +28,6 @@ class NullOrDate extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'date';
+        return 'nullOrDate';
     }
 }

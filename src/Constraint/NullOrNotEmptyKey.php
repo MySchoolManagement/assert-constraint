@@ -28,6 +28,6 @@ class NullOrNotEmptyKey extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'notEmptyKey';
+        return 'nullOrNotEmptyKey';
     }
 }

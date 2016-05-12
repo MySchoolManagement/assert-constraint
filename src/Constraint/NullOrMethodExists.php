@@ -28,6 +28,6 @@ class NullOrMethodExists extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'methodExists';
+        return 'nullOrMethodExists';
     }
 }

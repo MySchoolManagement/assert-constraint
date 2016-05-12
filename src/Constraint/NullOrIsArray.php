@@ -27,6 +27,6 @@ class NullOrIsArray extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'isArray';
+        return 'nullOrIsArray';
     }
 }

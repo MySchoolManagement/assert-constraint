@@ -27,6 +27,6 @@ class NullOrClassExists extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'classExists';
+        return 'nullOrClassExists';
     }
 }
