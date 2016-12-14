@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraint\Constraint;
+namespace AssertionConstraintConstraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value is a php integer'ish. @param mixed $value @param string|null $message @param string|null $propertyPath @return void @throws \Assert\AssertionFailedException /
+ * Assert that value is a php integer'ish.
  *
  * @Annotation
  * @Target({"PROPERTY"})

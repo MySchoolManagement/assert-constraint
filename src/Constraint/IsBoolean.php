@@ -1,5 +1,5 @@
 <?php
-namespace AssertionConstraint\Constraint;
+namespace AssertionConstraintConstraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
@@ -27,6 +27,6 @@ class IsBoolean extends AbstractAssertionConstraint
      */
     public function getAssertionMethodName()
     {
-        return 'IsBoolean';
+        return 'boolean';
     }
 }

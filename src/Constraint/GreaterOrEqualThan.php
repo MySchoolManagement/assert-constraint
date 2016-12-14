@@ -1,5 +1,5 @@
 <?php
-namespace AssertionConstraint\Constraint;
+namespace AssertionConstraintConstraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
