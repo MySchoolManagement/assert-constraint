@@ -10,6 +10,7 @@ $class = $argv[2];
 $outputNamespace = $argv[3];
 $outputDirectory = $argv[4];
 
+require(__DIR__ . '/../../../autoload.php');
 require($file);
 
 $assertionTemplate = <<<TEMPLATE
@@ -77,9 +78,8 @@ foreach ($reflClass->getMethods() as $method) {
     $assertionName = buildAssertionName($method);
     $constraintProperties = buildConstraintPropertyList($method);
 
-    writeConstraintFile($assertionName, $constraintProperties, $method, $outputDirectory, $assertionTemplate);
-    writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, $outputDirectory, $assertionTemplate);
-    writeConstraintFile('all' . ucwords($assertionName), $constraintProperties, $method, $outputDirectory, $assertionTemplate);
+    writeConstraintFile($assertionName, $constraintProperties, $method, $method->getName(), $outputDirectory, $assertionTemplate);
+    writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, 'nullOr' . ucwords($method->getName()), $outputDirectory, $assertionTemplate);
 }
 
 function isMethodIgnored(ReflectionMethod $method)
@@ -132,7 +132,7 @@ function buildConstraintPropertyList(ReflectionMethod $method)
     return $properties;
 }
 
-function writeConstraintFile($assertionName, array $constraintProperties, ReflectionMethod $method, $outputDirectory, $template)
+function writeConstraintFile($assertionName, array $constraintProperties, ReflectionMethod $method, string $methodName, $outputDirectory, $template)
 {
     global $propertyTemplate, $parameterNameMethodTemplate, $parameterNameMethodTemplate, $assertionMethodNameTemplate, $outputNamespace;
 
@@ -157,7 +157,7 @@ function writeConstraintFile($assertionName, array $constraintProperties, Reflec
         $templateMethods[] = str_replace(array_keys($tokens), array_values($tokens), $parameterNameMethodTemplate);
     }
 
-    $templateMethods[] = str_replace('{{ name }}', $method->getName(), $assertionMethodNameTemplate);
+    $templateMethods[] = str_replace('{{ name }}', $methodName, $assertionMethodNameTemplate);
 
     $assertionName = ucwords($assertionName);
     $tokens = [
