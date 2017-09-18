@@ -53,8 +53,9 @@ class AssertionValidator extends ConstraintValidator
             call_user_func_array($callable, $parameters);
         } catch (\Exception $e) {
             if ($e instanceof static::$assertExceptionClass) {
-                $this->context->buildViolation($e->getMessage())
+                $this->context->buildViolation($e->getMessageComposedKey())
                     ->setParameter('{{ value }}', $this->formatValue($value))
+                    ->setParameters($e->getMessageParameters())
                     ->setCode($e->getCode())
                     ->addViolation();
             } else {
