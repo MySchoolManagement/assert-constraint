@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that a number is smaller as a given limit
+ * Assert that a number is smaller as a given limit.
  *
  * @Annotation
  * @Target({"PROPERTY"})

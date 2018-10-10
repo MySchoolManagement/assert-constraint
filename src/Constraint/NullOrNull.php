@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value is null
+ * Assert that value is null.
  *
  * @Annotation
  * @Target({"PROPERTY"})

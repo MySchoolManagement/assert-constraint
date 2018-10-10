@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that a directory exists
+ * Assert that a directory exists.
  *
  * @Annotation
  * @Target({"PROPERTY"})

@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that two values are equal (using == ).
+ * Assert that two values are equal (using ==).
  *
  * @Annotation
  * @Target({"PROPERTY"})

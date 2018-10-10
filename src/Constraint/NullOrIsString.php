@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value is a string
+ * Assert that value is a string.
  *
  * @Annotation
  * @Target({"PROPERTY"})

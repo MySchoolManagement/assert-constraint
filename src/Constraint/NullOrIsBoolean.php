@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value is php boolean
+ * Assert that value is php boolean.
  *
  * @Annotation
  * @Target({"PROPERTY"})

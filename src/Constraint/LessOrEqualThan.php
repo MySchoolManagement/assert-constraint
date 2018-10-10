@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Determines if the value is less or than given limit.
+ * Determines if the value is less or equal than given limit.
  *
  * @Annotation
  * @Target({"PROPERTY"})

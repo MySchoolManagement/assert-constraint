@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that the class implements the interface
+ * Assert that the class implements the interface.
  *
  * @Annotation
  * @Target({"PROPERTY"})

@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that the value is something writeable
+ * Assert that the value is something writeable.
  *
  * @Annotation
  * @Target({"PROPERTY"})

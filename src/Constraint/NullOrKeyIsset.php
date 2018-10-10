@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that key exists in an array/array-accessible object using isset()
+ * Assert that key exists in an array/array-accessible object using isset().
  *
  * @Annotation
  * @Target({"PROPERTY"})

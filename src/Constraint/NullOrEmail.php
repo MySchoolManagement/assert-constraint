@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value is an email adress (using input_filter/FILTER_VALIDATE_EMAIL).
+ * Assert that value is an email address (using input_filter/FILTER_VALIDATE_EMAIL).
  *
  * @Annotation
  * @Target({"PROPERTY"})

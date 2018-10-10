@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that the given string is a valid E164 Phone Number
+ * Assert that the given string is a valid E164 Phone Number.
  *
  * @Annotation
  * @Target({"PROPERTY"})

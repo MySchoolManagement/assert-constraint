@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Alias of {@see choice()}
+ * Assert that value is in array of choices.
  *
  * @Annotation
  * @Target({"PROPERTY"})

@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that key exists in an array/array-accessible object and it's value is not empty.
+ * Assert that key exists in an array/array-accessible object and its value is not empty.
  *
  * @Annotation
  * @Target({"PROPERTY"})

@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that a file exists
+ * Assert that a file exists.
  *
  * @Annotation
  * @Target({"PROPERTY"})

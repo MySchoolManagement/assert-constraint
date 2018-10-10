@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that key does not exist in an array
+ * Assert that key does not exist in an array.
  *
  * @Annotation
  * @Target({"PROPERTY"})

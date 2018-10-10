@@ -1,10 +1,10 @@
 <?php
-namespace AssertionConstraintConstraint;
+namespace AssertionConstraint\Constraint;
 
 use AssertionConstraint\AbstractAssertionConstraint;
 
 /**
- * Assert that value matches a regex
+ * Assert that value matches a regex.
  *
  * @Annotation
  * @Target({"PROPERTY"})
