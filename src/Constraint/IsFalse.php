@@ -9,7 +9,7 @@ use AssertionConstraint\AbstractAssertionConstraint;
  * @Annotation
  * @Target({"PROPERTY"})
  */
-class False extends AbstractAssertionConstraint
+class IsFalse extends AbstractAssertionConstraint
 {
 
     public $message;
