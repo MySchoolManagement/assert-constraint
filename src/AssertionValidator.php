@@ -46,7 +46,12 @@ class AssertionValidator extends ConstraintValidator
         $parameters = array($value);
 
         foreach ($constraint->getAssertionParameterNames() as $name) {
-            $parameters[] = $constraint->{$name};
+            // fixme:
+            if ('context' === $name) {
+                $parameters[] = $this->context;
+            } else {
+                $parameters[] = $constraint->{$name};
+            }
         }
 
         try {
