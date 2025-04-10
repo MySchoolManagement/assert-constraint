@@ -16,8 +16,8 @@
   ],
   "require": {
     "php": ">=7.2",
-    "beberlei/assert": "^v3.2",
-    "symfony/validator": "^v4.2|^v5.0"
+    "beberlei/assert": "^v3",
+    "symfony/validator": "^v4.2|^v5.0|^v6.0"
   },
   "bin": ["bin/generate-constraints.php"],
   "autoload": {
