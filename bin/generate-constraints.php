@@ -18,13 +18,13 @@ $assertionTemplate = <<<TEMPLATE
 namespace {{ namespace }};
 
 use AssertionConstraint\AbstractAssertionConstraint;
+use Attribute;
 
 /**
  * {{ comment }}
- *
- * @Annotation
- * @Target({"PROPERTY"})
  */
+ 
+#[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 class {{ name }} extends AbstractAssertionConstraint
 {
 {{ properties }}
