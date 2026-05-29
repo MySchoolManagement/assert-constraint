@@ -27,7 +27,9 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PROPERTY | Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 class {{ name }} extends AbstractAssertionConstraint
 {
-{{ properties }}
+{{ members }}
+
+{{ constructor }}
 {{ methods }}
 }
 
@@ -53,18 +55,17 @@ $parameterNameMethodTemplate = <<<TEMPLATE
     }
 TEMPLATE;
 
-$propertyTemplate = <<<TEMPLATE
-    public \${{ name }};
-TEMPLATE;
-
 $ignoredMethods = [
     '__callStatic',
 ];
 
 $rewrittenAssertionNames = [
     'boolean' => 'IsBoolean',
+    'false' => 'IsFalse',
     'float' => 'IsFloat',
     'integer' => 'IsInteger',
+    'null' => 'IsNull',
+    'true' => 'IsTrue',
     'string' => 'IsString',
 ];
 
@@ -77,10 +78,12 @@ foreach ($reflClass->getMethods() as $method) {
 
     $assertionName = buildAssertionName($method);
     $constraintProperties = buildConstraintPropertyList($method);
+    $constructor = buildConstructor($method);
+    $members = buildMembers($method);
 
-    writeConstraintFile($assertionName, $constraintProperties, $method, $method->getName(), $outputDirectory, $assertionTemplate);
-    writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, 'nullOr' . ucwords($method->getName()), $outputDirectory, $assertionTemplate);
-    writeConstraintFile('all' . ucwords($assertionName), $constraintProperties, $method, 'all' . ucwords($method->getName()), $outputDirectory, $assertionTemplate);
+    writeConstraintFile($assertionName, $constraintProperties, $method, $method->getName(), $constructor, $members, $outputDirectory, $assertionTemplate);
+    writeConstraintFile('nullOr' . ucwords($assertionName), $constraintProperties, $method, 'nullOr' . ucwords($method->getName()), $constructor, $members, $outputDirectory, $assertionTemplate);
+    writeConstraintFile('all' . ucwords($assertionName), $constraintProperties, $method, 'all' . ucwords($method->getName()), $constructor, $members, $outputDirectory, $assertionTemplate);
 }
 
 function isMethodIgnored(ReflectionMethod $method)
@@ -112,10 +115,6 @@ function buildAssertionName(ReflectionMethod $method)
 
 function buildConstraintPropertyList(ReflectionMethod $method)
 {
-    // we're going to make assumptions that every assertion follows the standard prototype of:
-    //      function assertion($value, $message = null, $propertyPath = null)
-    // and that we'll assume as soon as we hit a $message parameter, everything before is going to affect the
-    // behaviour of the assertion and as such needs to be made available for configuration
     $properties = [];
     $parameterList = $method->getParameters();
 
@@ -124,30 +123,101 @@ function buildConstraintPropertyList(ReflectionMethod $method)
 
     foreach ($parameterList as $parameter) {
         $properties[] = $parameter;
-
-        if ($parameter->getName() === 'message') {
-            break;
-        }
     }
 
     return $properties;
 }
 
-function writeConstraintFile($assertionName, array $constraintProperties, ReflectionMethod $method, string $methodName, $outputDirectory, $template)
+function buildConstructor(ReflectionMethod $method): string
 {
-    global $propertyTemplate, $parameterNameMethodTemplate, $parameterNameMethodTemplate, $assertionMethodNameTemplate, $outputNamespace;
+    $properties = [];
+    $assign = [];
+    $parameterList = $method->getParameters();
 
-    $templateProperties = [];
+    // `value` is provided at runtime.
+    array_shift($parameterList);
+
+    foreach ($parameterList as $parameter) {
+        $type = null;
+        $name = $parameter->getName();
+        $defaultValue = $parameter->isOptional() ? var_export($parameter->getDefaultValue(), true) : null;
+
+        if ($parameter->getType()) {
+            $type = sprintf('%s%s',
+                $parameter->isOptional() ? '?' : '',
+                $parameter->getType()->getName()
+            );
+        }
+
+        $str = sprintf('%s $%s %s,',
+            $type,
+            $name,
+            $defaultValue ? ' = ' . $defaultValue : '',
+        );
+
+        $properties[] = '    ' .trim($str);
+        $assign[] = sprintf('    $this->%1$s = $%1$s;', $name );
+    }
+
+    $template = <<<EOF
+public function __construct(
+%s
+    mixed \$options = null,
+    ?array \$groups = null,
+    mixed \$payload = null
+)
+{
+%s
+
+    parent::__construct(\$options, \$groups, \$payload);
+}
+EOF;
+
+    $propertyStr = join("\n", $properties);
+    $assignStr = join("\n", $assign);
+
+    return sprintf($template, $propertyStr, $assignStr);
+}
+
+function buildMembers(ReflectionMethod $method): string
+{
+    $properties = [];
+    $parameterList = $method->getParameters();
+
+    // `value` is provided at runtime.
+    array_shift($parameterList);
+
+    foreach ($parameterList as $parameter) {
+        $type = null;
+        $name = $parameter->getName();
+        $defaultValue = null;
+
+        if ($parameter->getType()) {
+            $type = sprintf('%s%s',
+                $parameter->isOptional() ? '?' : '',
+                $parameter->getType()?->getName()
+            );
+        }
+
+        $properties[] = sprintf('public %s $%s %s;',
+            $type,
+            $name,
+            $defaultValue ? ' = ' . $defaultValue : '',
+        );
+    }
+
+    return join("\n", $properties);
+}
+
+function writeConstraintFile($assertionName, array $constraintProperties, ReflectionMethod $method, string $methodName, string $constructor, string $members, $outputDirectory, $template)
+{
+    global $parameterNameMethodTemplate, $assertionMethodNameTemplate, $outputNamespace;
+
     $templateMethods = [];
     $parameterNames = [];
 
     foreach ($constraintProperties as $property) {
-        $tokens = [
-            '{{ name }}' => $property->getName(),
-        ];
-
         $parameterNames[] = sprintf("'%s'", $property->getName());
-        $templateProperties[] = str_replace(array_keys($tokens), array_values($tokens), $propertyTemplate);
     }
 
     if (sizeof($parameterNames) > 0) {
@@ -166,7 +236,8 @@ function writeConstraintFile($assertionName, array $constraintProperties, Reflec
         '{{ methods }}' => sizeof($templateMethods) ? "\n" . join("\n\n", $templateMethods) : '',
         '{{ name }}' => $assertionName,
         '{{ namespace }}' => $outputNamespace,
-        '{{ properties }}' => sizeof($templateProperties) ? "\n" . join("\n", $templateProperties) : '',
+        '{{ members }}' => $members,
+        '{{ constructor }}' => $constructor,
     ];
     $outputPath = $outputDirectory . '/' . $assertionName . '.php';
 
